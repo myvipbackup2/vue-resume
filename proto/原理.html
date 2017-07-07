@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原理</title>
+    <style id="css"></style>
+</head>
+<body>
+<header>
+    简单的基本实现原理【打字效果】
+</header>
+<div id="app"></div>
+</body>
+
+
+<script>
+    const app = document.getElementById('app');
+    const style = document.getElementById('css');
+    const pre = `
+        <p>这是一个简单的原理输出源码</p>
+        <p>就像是一个人在打字一样</p>
+        <p>还可以同时写css！</p>
+        <a href="#">这就像是一个链接</a>
+    `;
+    const css = `
+        #app{
+            width: 600px;
+            margin:0 auto;
+            background-color: #333;
+            color: #ffffff;
+        }
+    `;
+    let n = 0;
+    let timer = setInterval(() => {
+        if (n === css.length) {
+            clearInterval(timer);
+            console.log('end');
+        }
+        app.innerHTML = css.substr(0, n);
+        style.innerHTML = css.substr(0, n);
+        n++
+    }, 70)
+
+</script>
+</html>
