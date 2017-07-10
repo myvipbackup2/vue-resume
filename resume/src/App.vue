@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import StyleEditor from './components/StyleEditor'
-    import ResumeEditor from './components/ResumeEditor'
+    import StyleEditor from './components/StyleEditor.vue'
+    import ResumeEditor from './components/ResumeEditor.vue'
     import './assets/reset.css'
 
     export default {
@@ -87,15 +87,14 @@ html{
 
 /* 好了，我开始写简历了 */
 
-`,
-`
+`, `
 /* 这个简历好像差点什么
  * 对了，这是 Markdown 格式的，我需要变成对 HR 更友好的格式
  * 简单，用开源工具翻译成 HTML 就行了
  */
                 `],
                 enableHtml: false,
-                currentMarkdown: '',
+                currentMarkdown: ``,
                 fullMarkdown: `李子翔
 ----
 
@@ -138,7 +137,7 @@ html{
                 await this.showHtml();
                 await this.progressivelyShowStyle(2);
             },
-            showHtml: function () {
+            showHtml(){
                 return new Promise((resolve, reject) => {
                     this.enableHtml = true;
                     resolve();

@@ -15,4 +15,20 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 遇到的坑
+
+要安装 `babel-plugin-transform-runtime` 这个插件   
+
+并且在`.babelrc`文件中配置
+```
+"plugins": ["transform-runtime"]
+```
+
+否则ES6以及更新的一些新特性会用不了
+```
+    async / await 就会报错  
+```
+
+
+
+
